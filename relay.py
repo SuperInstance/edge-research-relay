@@ -200,7 +200,7 @@ class ResearchQuery:
             query_id=data["query_id"],
             query_text=data["query_text"],
             source_id=data["source_id"],
-            priority=MessagePriority(data.get("priority", "medium")),
+            priority=MessagePriority(data.get("priority", MessagePriority.MEDIUM.value)),
             created_at=data.get("created_at", time.time()),
             status=data.get("status", "pending"),
         )
@@ -234,7 +234,7 @@ class EdgeFinding:
             data=data.get("data"),
             query_id=data.get("query_id"),
             created_at=data.get("created_at", time.time()),
-            priority=MessagePriority(data.get("priority", "medium")),
+            priority=MessagePriority(data.get("priority", MessagePriority.MEDIUM.value)),
         )
 
 
@@ -270,7 +270,7 @@ class RelayMessage:
             direction=MessageDirection(data["direction"]),
             source=data["source"],
             destination=data["destination"],
-            priority=MessagePriority(data.get("priority", "medium")),
+            priority=MessagePriority(data.get("priority", MessagePriority.MEDIUM.value)),
             created_at=data.get("created_at", time.time()),
             size_bytes=data.get("size_bytes", 0),
         )
